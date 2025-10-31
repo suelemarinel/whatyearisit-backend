@@ -4,7 +4,7 @@ var router = express.Router();
 // GET /year
 router.get('/', function(req, res, next) {
   const currentYear = new Date();
-  res.json({ year: currentYear.getFullYear().toString() });
+  res.json({ year: currentYear.toISOString().split('-')[0] });
 });
 
 module.exports = router;
